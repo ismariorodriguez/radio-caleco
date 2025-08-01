@@ -1,0 +1,344 @@
+:root {
+    --mint: #D8F2D5;
+    --forest-green: #1F4E23;
+    --teal: #38A29D;
+    --calico-orange: #EFA63C;
+    --charcoal: #231F20;
+    --cream: #F5EADA;
+    --white: #FFFFFF;
+}
+
+body { 
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; 
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0; 
+    background: var(--white);
+    min-height: 100vh;
+    color: var(--charcoal);
+}
+.header {
+    background: var(--charcoal);
+    padding: 20px 0;
+    text-align: center;
+}
+.header h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: var(--cream);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+}
+.hero-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.album-display {
+    position: relative;
+}
+.album-artwork-large {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.year-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--calico-orange);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transform: rotate(15deg);
+}
+.artist-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--calico-orange);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+}
+.artist-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.track-info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+audio {
+    display: none;
+}
+.time-display {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--forest-green);
+    background: var(--mint);
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(31, 78, 35, 0.2);
+    min-width: 60px;
+    text-align: center;
+}
+button:active {
+    transform: translateY(0);
+}
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+input[type="range"] {
+    width: 120px;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--mint);
+    outline: none;
+    appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--teal);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.status {
+    margin: 16px 0;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: var(--mint);
+    color: var(--forest-green);
+    font-weight: 500;
+    border: 1px solid rgba(31, 78, 35, 0.2);
+}
+.status.playing {
+    background: var(--teal);
+    color: var(--white);
+    border-color: var(--teal);
+}
+.status.stopped {
+    background: var(--calico-orange);
+    color: var(--white);
+    border-color: var(--calico-orange);
+}
+.stream-info {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+.track-title-large {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+.track-subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: var(--charcoal);
+    margin-bottom: 32px;
+    line-height: 1.2;
+}
+.album-info {
+    font-size: 1.25rem;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+}
+.quality-info {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+.audio-controls {
+    background: var(--charcoal);
+    border-radius: 4px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.play-button {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+.play-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.time-info {
+    color: var(--white);
+    font-family: monospace;
+    font-size: 14px;
+}
+.volume-slider {
+    flex: 1;
+    margin: 0 16px;
+}
+.previous-tracks {
+    background: var(--mint);
+    padding: 40px 24px;
+    margin-top: 60px;
+}
+.previous-tracks h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--charcoal);
+    text-align: center;
+    margin-bottom: 32px;
+}
+.track-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.track-item {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: var(--charcoal);
+}
+.track-artist {
+    font-weight: 600;
+}
+.track-name {
+    font-style: italic;
+    color: #666;
+}
+.rating-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: transparent;
+    border: 2px solid var(--forest-green);
+    border-radius: 4px;
+    color: var(--forest-green);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+.rating-button:hover {
+    background: var(--mint);
+    transform: translateY(-1px);
+}
+.rating-button.voted {
+    background: var(--forest-green);
+    color: var(--white);
+}
+.rating-button.voted.thumbs-down {
+    background: var(--calico-orange);
+    border-color: var(--calico-orange);
+    color: var(--white);
+}
+.rating-button .emoji {
+    font-size: 16px;
+}
+.vote-count {
+    font-weight: bold;
+    font-size: 13px;
+}
+.recent-tracks {
+    max-height: 200px;
+    overflow-y: auto;
+}
+.recent-track {
+    padding: 16px;
+    margin: 8px 0;
+    background: var(--white);
+    border-radius: 4px;
+    border-left: 3px solid var(--teal);
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.recent-track:hover {
+    background: var(--mint);
+    transition: background 0.3s ease;
+}
+.rating-section {
+    margin: 24px 0;
+}
+.rating-btn {
+    background: transparent;
+    border: 2px solid var(--forest-green);
+    color: var(--forest-green);
+    padding: 8px 16px;
+    margin: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.rating-btn:hover {
+    background: var(--mint);
+}
+.rating-btn.voted {
+    background: var(--forest-green);
+    color: var(--white);
+}
+@media (max-width: 768px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .track-title-large {
+        font-size: 2.5rem;
+    }
+    .track-subtitle {
+        font-size: 1.8rem;
+    }
+    .artist-name {
+        font-size: 2rem;
+    }
+    .year-badge {
+        font-size: 1.2rem;
+        padding: 6px 12px;
+    }
+}

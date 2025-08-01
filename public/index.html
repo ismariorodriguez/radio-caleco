@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Calico - Live HLS Stream</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <img src="RadioCalicoLogoTM.png" alt="Radio Calico Logo" class="logo">
+            <h1>Radio Calico</h1>
+        </div>
+    </header>
+    
+    <section class="hero-section">
+        <div class="album-display">
+            <img id="currentAlbumArt" src="https://picsum.photos/500/500?random=1" alt="Album Artwork" class="album-artwork-large">
+            <div class="year-badge" id="yearBadge">1983</div>
+            <div class="artist-banner">
+                <div class="artist-name" id="artistName">SHANDI</div>
+            </div>
+        </div>
+        
+        <div class="track-info-section">
+            <h2 class="track-title-large" id="trackTitle">Shandi</h2>
+            <h3 class="track-subtitle" id="trackSubtitle">Sinnamon</h3>
+            
+            <div class="album-info" id="albumInfo">
+                He's A Dream (1983)
+            </div>
+            
+            <div class="album-info" id="albumSource">
+                Flashdance (Original Motion Picture Soundtrack)
+            </div>
+            
+            <div class="quality-info">
+                Source quality: 16-bit 44.1kHz<br>
+                Stream quality: 48kHz FLAC / HLS Lossless
+            </div>
+            
+            <div class="rating-section">
+                <span>Rate this track:</span>
+                <button class="rating-btn" id="thumbsUp" onclick="vote('up')">👍</button>
+                <button class="rating-btn" id="thumbsDown" onclick="vote('down')">👎</button>
+            </div>
+            
+            <div class="audio-controls">
+                <button class="play-button" id="playBtn" onclick="playStream()">▶</button>
+                <span class="time-info" id="timeDisplay">0:35 / Live</span>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50" oninput="setVolume(this.value)">
+                <span style="color: white;">🔊</span>
+            </div>
+            
+            <audio id="audioPlayer" preload="none"></audio>
+        </div>
+    </section>
+
+    <section class="previous-tracks">
+        <h3>Previous tracks:</h3>
+        <div class="track-list" id="recentlyPlayed">
+            <div class="track-item">TLC: <span class="track-name">Ain't 2 Proud 2 Beg</span></div>
+            <div class="track-item">The Raconteurs: <span class="track-name">Steady, As She Goes</span></div>
+            <div class="track-item">Mick Jagger: <span class="track-name">Just Another Night</span></div>
+            <div class="track-item">Beyoncé: <span class="track-name">Irreplaceable (Album Version)</span></div>
+            <div class="track-item">Etta James: <span class="track-name">I'd Rather Go Blind</span></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
